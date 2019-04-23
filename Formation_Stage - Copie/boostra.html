@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://static.optionizr.com/plugins/bootstrap/css/bootstrap.min.css"         rel="stylesheet" />
+
+    <script src="https://static.optionizr.com/js/jquery-1.11.2.min.js"></script>
+    <script src="https://static.optionizr.com/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="monscript.js"></script>
+</head>
+<body>
+<h1>Hello moto</h1>
+<div class=”container”>
+    <div class='row'>
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h2>Formulaire</h2>
+                </div>
+                <div class='panel-body'>
+                    <div id='alertS' class='alert alert-success' role='alert' style='display: none'><p>Succes</p></div>
+                    <div id='alertD' class='alert alert-danger' role='alert' style='display: none'><p>Erreur</p></div>
+                    <div class='row'>
+                        <div class='col-md-6 col-sm-12 col-xs-12'>
+                            <div class='form-group'>
+                                <label>surname</label>
+                                <input id='surname' type='text' class='form-control'>
+                                <label>firsname</label>
+                                <input id='firstname' type='text' class='form-control'>
+                                <label> Sexe</label>
+                                <select class='form-control'>
+                                    <option value='M'>Homme</option>
+                                    <option value='F'>Femme</option>
+                                </select>
+                                <label>Age</label>
+                                <input id='age' type='number' class='form-control'>
+                            </div>
+                        </div>
+                        <div class='col-md-6 col-sm-12 col-xs-12'>
+                            <div class='form-group'>
+                                <label>Commentaire</label>
+                                <input id='commentaire' type='text' class='form-control'>
+                                <label>Adresse</label>
+                                <input id='adresse' type='text' class='form-control'>
+                                <textarea class='form-control' rows='2'></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6 col-md-offset-3  col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0'>
+                            <div class='row'>
+                                <div class='col-md-6 col-sm-12 col-xs-12'>
+                                    <button id='subBut' class='btn btn-success'>Submit</button>
+                                </div>
+                                <div class='col-md-6 col-xs-12 col-sm-12'>
+                                    <button id='canBut' class='btn btn-danger'>Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
