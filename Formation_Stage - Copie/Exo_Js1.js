@@ -18,7 +18,6 @@ res=a.filter(function(elt){
 // res=res.sort();
 console.log("exo 2 \n");
 console.log(res);
-
 var sg = ["bonjour", "monsieur", "john", "doe"];
 var phrase=sg.join(" ");
 var cop=[];
