@@ -1,0 +1,46 @@
+<script>
+    function removeUser(me, index, c) {
+        console.log(index);
+        let url = "http://localhost:9013/user/delete?_id=" + index;
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function (res) {
+                let id = '#user' + c;
+                $(id).remove();
+            },
+            error: function (res, stat, error) {
+                console.log("Erreur");
+                alert(error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        $.ajax({
+            url: "http://localhost:9013/users",
+            type: "GET",
+            success: function (res) {
+                let text="";
+                let but="";
+                console.log(res);
+                for(let i = 0;i<res.data.length;i++){
+                    text+="<tr id=\'user"+i+"\'>";
+                    text+="<td>"+res.data[i]['nom']+"</td>";
+                    text+="<td>"+res.data[i]['prenom']+"</td>";
+                    text+="<td>"+res.data[i]['age']+"</td>";
+                    text+="<td>"+res.data[i]['sexe']+"</td>";
+                    text+="<td>"+res.data[i]['adresse']+"</td>";
+                    but="<td><button onclick=removeUser(this,'"+res.data[i]['_id']+"',"+i+") class=\'btn btn-danger\'>remove</button></td></tr>";
+                    text+=but;
+                }
+
+                $('#tableid tr:last').after(text);
+            },
+            error: function (res, stat, error) {
+                alert(error);
+            }
+        });
+    });
+</script>

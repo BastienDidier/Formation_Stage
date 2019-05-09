@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <%- include("./Header.ejs", {}) %>
+    <%- include("./FormAddUserScript.ejs", {}) %>
+</head>
+<body>
+<div class=”container”>
+    <div class='row'>
+        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h2>Formulaire</h2>
+                </div>
+                <form action="http://localhost:9013/user/add/form" method="POST">
+
+                    <div class='panel-body'>
+
+                        <div id='alertS' class='alert alert-success' role='alert' style='display: none'><p>Utilisateur
+                                Ajouté</p></div>
+                        <div id='alertD' class='alert alert-danger' role='alert' style='display: none'><p>Erreur
+                                Corriger les champs</p>
+                        </div>
+
+                        <div class='row'>
+
+                            <div class='col-md-6 col-sm-12 col-xs-12'>
+
+                                <div class='form-group'>
+                                    <label>Nom</label>
+                                    <input id='surname' type='text' name="nom" value="" class='form-control'>
+                                    <label>Prenom</label>
+                                    <input id='firstname' type='text' name="prenom" class='form-control'>
+                                    <label> Sexe</label>
+                                    <select id="sexe" name="sexe" class='form-control'>
+                                        <option value='M'>Homme</option>
+                                        <option value='F'>Femme</option>
+                                    </select>
+                                    <label>Age</label>
+                                    <input id='age' type='number' name="age" class='form-control'>
+                                </div>
+
+                            </div>
+
+                            <div class='col-md-6 col-sm-12 col-xs-12'>
+                                <div class='form-group'>
+                                    <label>Commentaire</label>
+                                    <input id='commentaire' name="commentaire" type='text' class='form-control'>
+                                    <label>Adresse</label>
+                                    <input id='adresse' type='text' name="adresse" class='form-control'>
+                                    <textarea class='form-control' rows='2'></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class='row'>
+
+                            <div class='col-md-6 col-md-offset-3  col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0'>
+                                <div class='row'>
+                                    <div class='col-md-6 col-sm-12 col-xs-12'>
+                                        <button id='subBut' type="submit" class='btn btn-success'>Submit</button>
+                                    </div>
+                                    <div class='col-md-6 col-xs-12 col-sm-12'>
+                                        <button type="reset" id='canBut' class='btn btn-danger'>Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+                <button id='xhr' class='btn btn-primary'>XHR</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

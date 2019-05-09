@@ -1,4 +1,4 @@
-
+node_modules
 Formation_Stage - Copie/\.idea/
 
 Formation_Stage - Copie/bootstrap-3\.3\.7-dist/js/npm\.js
@@ -10,3 +10,29 @@ Formation_Stage - Copie/bootstrap-3\.3\.7-dist/fonts/
 Formation_Stage - Copie/bootstrap-3\.3\.7-dist/css/
 
 Formation_Stage - Copie/dsf
+
+Formation_Stage - Copie/Exo_Js1\.js
+
+EJS/\.idea/
+
+EJS/node_modules/\.bin/
+
+*.md
+
+API/\.idea/
+
+API/node_modules/\.bin/
+
+API/node_modules/accepts/
+
+API/node_modules/ansi-regex/
+
+API/node_modules/argparse/examples/
+
+API/node_modules/argparse/node_modules/lodash/array/
+
+API/node_modules/amdefine/amdefine\.js
+
+API/node_modules/amdefine/
+
+API/node_modules/ansi-styles/

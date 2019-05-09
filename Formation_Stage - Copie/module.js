@@ -93,15 +93,7 @@ async.waterfall([function(wcb){
     if(err)
     {
         console.log("erreur");
-        console.log(
-
-
-
-
-
-
-
-        );
+        console.log();
         exit(0);
     }
     else

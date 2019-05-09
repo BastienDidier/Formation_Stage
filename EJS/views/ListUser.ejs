@@ -1,0 +1,32 @@
+<html>
+<head>
+    <%- include("./Header.ejs", {}) %>
+    <%- include("./ListUserScript.ejs", {}) %>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Ma liste des Users</h1>
+        <form action="http://localhost:9013/user/list" method="POST">
+            <button type="submit" class="btn btn-primary">Remove all</button>
+        </form>
+    </div>
+    <table id="tableid" class="table">
+
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Age</th>
+            <th>Sexe</th>
+            <th>Adresse</th>
+        </tr>
+        </thead>
+        <tbody class="tab-content">
+            <tr></tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

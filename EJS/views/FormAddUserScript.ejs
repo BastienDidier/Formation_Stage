@@ -1,0 +1,106 @@
+<script>
+function getResult() {
+    let res = {};
+    res ["nom"] = $('#surname').val()
+    res ['prenom'] = $("#firstname").val();
+    res ['age'] = $('#age').val();
+    res ['commentaire'] = $('#commentaire').val();
+    res ["adresse"] = $('#adresse').val();
+    res ["sexe"] = $('#sexe').val();
+    return res;
+}
+
+function checkResult(res) {
+    return checkNom(res.nom) && checkPrenom(res.prenom) && checkAge(res.age) && checkAdresse(res.adresse);
+}
+
+function checkNom(nom) {
+    let ok = true;
+    if (nom.length < 1) {
+        ok = false;
+    }
+    if (nom.length > 50) {
+        ok = false;
+    }
+    return ok;
+}
+
+function checkPrenom(prenom) {
+    return checkNom(prenom);
+}
+
+function checkAge(age) {
+    if (isNaN(age) || age < 0 || age > 130) {
+        return false
+    } else {
+        return true;
+    }
+}
+
+function checkAdresse(adresse) {
+    let ok = true;
+    if (adresse.length < 1) {
+        ok = false;
+    }
+    if (adresse.length > 500) {
+        ok = false;
+    }
+    return ok;
+}
+
+
+$(document).ready(function () {
+
+    <%if(locals.error==true){%>
+        $('#alertD').css("display", "block");
+        $('#alertS').css("display", "none");
+    <%}else{%>
+        <%if(locals.success==true){%>
+            console.log(<%-locals.success%>)
+            $('#alertD').css("display", "none");
+            $('#alertS').css("display", "block");
+        <%}%>
+    <%}%>
+    alert("dans form");
+    $('#xhr').click ( function () {
+        //     //request post
+        result = getResult ();
+        if(checkResult(result)){
+            $.ajax({
+                url: "http://localhost:9013/user/add/xhr",
+                type:"POST",
+                data: result,
+                success:function(){
+                    $('#surname').val('');
+                    $('#firstname').val('');
+                    $('#age').val('0');
+                    $('#commentaire').val('');
+                    $('#adresse').val('');
+                    $('#alertD').css("display", "none");
+                    $('#alertS').css("display", "block");
+                },
+                error : function (res,stat,error){
+                    console.log("Erreur");
+                    console.log(error);
+                }
+            });
+        }else{
+            $('#alertD').css("display", "block");
+            $('#alertS').css("display", "none");
+            $('#age').val('1');
+            $('#commentaire').val('');
+            $('#adresse').val('');
+        }
+    });
+    $('#canBut').click(function () {
+        $('#alertD').css("display", "block");
+        $('#alertS').css("display", "none");
+        $('#surname').val('');
+        $('#firstname').val('');
+        $('#age').val('0');
+        $('#commentaire').val('');
+        $('#adresse').val('');
+    })
+});
+
+</script>
